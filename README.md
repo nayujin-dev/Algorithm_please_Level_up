@@ -1,1 +1,1 @@
-# SamsungSDS_Algorithm
+# Baekjoon_Algorithm
