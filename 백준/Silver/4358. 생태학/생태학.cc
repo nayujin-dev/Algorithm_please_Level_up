@@ -1,28 +1,20 @@
-#include <cstdio>
-#include <iostream>
-#include <string>
+#include<cstdio>
+#include<iostream>
 #include <map>
-
-using namespace std;
-
-map<string, int> dogam;
-
+#include<string>
+std::string name;
+std::map<std::string, int> tree;
 int main() {
-
-	//freopen("input.txt", "r", stdin);
-
-	string inputstr;
-	float treeCnt = 0;
-	while (getline(cin, inputstr)){
-		treeCnt++;
-		dogam[inputstr]++;
-	}
-
+	float tot = 0;
 	float val;
-	for (auto it = dogam.begin(); it != dogam.end(); it++) {
-		val = it->second * 100 / treeCnt;
-		printf("%s %.4f\n", it->first.c_str(), val);
-	}
+	while (getline(std::cin,name)) {
+		tree[name]++;
+		tot++;
 
+	}
+	for (auto each = tree.begin(); each != tree.end(); each++) {
+		val = each->second * 100 / tot;
+		printf("%s %.4f\n", each->first.c_str(), val);
+	}
 	return 0;
 }
