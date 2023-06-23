@@ -6,7 +6,7 @@ using namespace std;
 vector<int> solution(int brown, int yellow) {
     int garo,i=1;
     garo=(brown-4)/2;
-    for(;i<=2501||i<=garo/2;i++){
+    for(;i<=garo/2;i++){
         if(i*(garo-i)==yellow){
             break;
         }
