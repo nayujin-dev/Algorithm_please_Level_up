@@ -1,7 +1,5 @@
-#include <string>
-#include <vector>
-#include <iostream>
 #include <bitset>
+
 using namespace std;
 
 int countone(int n){
@@ -17,9 +15,8 @@ int solution(int n) {
     int answer = n+1;
     int num=countone(n);
     while(1){
-        if(num==countone(answer++))break;
+        if(num==countone(answer))break;
+        answer++;
     }
-    answer--;
-    
     return answer;
 }
