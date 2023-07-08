@@ -2,21 +2,12 @@
 
 using namespace std;
 
-int countone(int n){
-    int onenum=0;
-    while(1){
-        if(n==0)break;
-        if(n%2==1) onenum++;
-        n/=2;
-    }
-    return onenum;
-}
 int solution(int n) {
-    int answer = n+1;
-    int num=countone(n);
-    while(1){
-        if(num==countone(answer))break;
-        answer++;
+    int num=bitset<20>(n).count();
+    int answer=n+1;
+    int one=bitset<20>(answer).count();
+    while(num!=one){
+        one=bitset<20>(++answer).count();
     }
     return answer;
 }
