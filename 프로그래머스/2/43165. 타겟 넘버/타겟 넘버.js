@@ -11,9 +11,3 @@ function solution(numbers, target) {
     dfs(0,0)
     return answer;
 }
-
-function dfs(idx, accr) {
-        if (idx === numbers.length) return accr === target ? ++result : 1
-        dfs(idx + 1, accr + numbers[idx])
-        dfs(idx + 1, accr - numbers[idx])
-    }
