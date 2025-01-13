@@ -1,6 +1,4 @@
-
 #include <iostream>
-
 
 int dx[4] = { 1,0,-1,0 };
 int dy[4] = { 0, 1, 0,-1 };
@@ -9,9 +7,7 @@ bool visit[100 + 2][100 + 2];
 
 int n, m;
 char soldier;
-int sumW = 0;
-int sumB = 0;
-
+int sumW = 0, sumB = 0;
 int tot = 1;
 
 void dfs(int x, int y) {
