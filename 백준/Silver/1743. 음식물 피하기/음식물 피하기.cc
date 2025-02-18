@@ -1,13 +1,10 @@
 #include <iostream>
-#include <vector>
 #include <queue>
 
 int n, m, k, ans=0;
 bool visit[100 + 2][100 + 2];
 int arr[100 + 2][100 + 2];
-int maze[100 + 2][100 + 2];
 
-std::string s[100 + 2];
 std::queue<std::pair<int, int>> q;
 
 
@@ -16,9 +13,6 @@ int dy[4] = { 0,1,0,-1, };
 
 void bfs(int r, int c) {
 	visit[r][c] = true;
-	if (arr[r][c] == 0) {
-		return;
-	}
 	int size = 1;
 	q.push({ r,c });
 	int x, y;
@@ -34,7 +28,6 @@ void bfs(int r, int c) {
 					size++;
 				}
 				visit[nx][ny] = true;
-
 			}
 		}
 		q.pop();
@@ -50,14 +43,13 @@ int main() {
 	for (int i = 0; i < k; i++) {
 		std::cin >> r >> c;
 		arr[r - 1][c - 1] = 1;
-		maze[r - 1][c - 1] = 1;
 	}
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
-			bfs(i,j);
+			if(arr[i][j]==1)
+				bfs(i,j);
 		}
 	}
-
 	std::cout << ans;
 
 	return 0;
